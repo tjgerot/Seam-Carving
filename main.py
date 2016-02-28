@@ -1,7 +1,7 @@
 from PIL import Image
 def energy(pxls,x,y):
 	cr,cg,cb = pxls[x,y]
-	print("Current: " + str(cr,cg,cb))
+	print("Current: " + str(cr) + "," + str(cg) + "," + str(cb))
 	# (255,153,51)
 	lr,lg,lb = pxls[(x-1),y]
 	print("Left: " + str(lr) + "," + str(lg) + "," + str(lb))
