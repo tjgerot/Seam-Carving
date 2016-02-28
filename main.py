@@ -16,14 +16,17 @@ def getPixels(img):
 	pxls = img.load()
 	return pxls
 
+def saveEnergy(width,height,pxls):
+	for x in range(width - 1):
+		for y in range(height - 1):
+			print("Energy of pixel (" + str(x) + ", " + str(y) + "): " + str(energy(pxls,x,y)))
+
 def main():
 	print("Starting Program...")
 	img = getImage("images/lake.jpg")
 	pxls = getPixels(img)
 	width, height = img.size
-	for x in range(width - 1):
-		for y in range(height - 1):
-			print("Energy of pixel (" + str(x) + ", " + str(y) + "): " + str(energy(pxls,x,y)))
+	saveEnergy(width,height,pxls)
 
 if __name__ == "__main__":
   main()
