@@ -21,7 +21,8 @@ def saveEnergy(width,height,pxls):
 	row = []
 	for x in range(width):
 		for y in range(height):
-			row.append(energy(pxls,x,y))
+			en = energy(pxls,x,y)
+			row.append(en)
 			if(y == (height - 1)):
 				whole.append(row)
 				row = []
@@ -32,7 +33,8 @@ def main():
 	img = getImage("images/lake.jpg")
 	pxls = getPixels(img)
 	width, height = img.size
-	print(saveEnergy(width,height,pxls))
+	eMap = saveEnergy(width,height,pxls)
+	print(eMap)
 
 if __name__ == "__main__":
   main()
