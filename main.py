@@ -4,13 +4,13 @@ def energy(pxls,x,y):
 	print("Current: " + str(cr,cg,cb))
 	# (255,153,51)
 	lr,lg,lb = pxls[(x-1),y]
-	print("Left: " + str(r,lg,lb))
+	print("Left: " + str(lr) + "," + str(lg) + "," + str(lb))
 	rr,rg,rb = pxls[(x+1),y]
-	print("Right: " + str(rr,rg,rb))
+	print("Right: " + str(rr) + "," + str(rg) + "," + str(rb))
 	tr,tg,tb = pxls[x,(y+1)]
-	print("Top: " + str(tr,tg,tb))
+	print("Top: " + str(tr) + "," + str(tg) + "," + str(tb))
 	br,bg,bb = pxls[x,(y-1)]
-	print("Bottom: " + str(br,bg,bb))
+	print("Bottom: " + str(br) + "," + str(bg) + "," + str(bb))
 	e = ((pow(abs(lr - rr),2)) + (pow(abs(lg - rg),2)) + (pow(abs(lb - rb),2))) + ((pow(abs(tr - br),2)) + (pow(abs(tg - bg),2)) + (pow(abs(tb - bb),2)))
 	return e
 
