@@ -5,7 +5,7 @@ def energy(pxls,x,y):
 	rr,rg,rb = pxls[(x+1),y]
 	tr,tg,tb = pxls[x,(y+1)]
 	br,bg,bb = pxls[x,(y-1)]
-	e = ((pow(abs(lr - rr),2)) + (pow(abs(lg - rg),2)) + (pow(abs(lb - rb),2))) + ((pow(abs(tr - br),2)) + (pow(abs(tg - bg),2)) + (pow(abs(tb - bb),2)))
+	e = ((pow(abs((pxls[(x-1),y][0]) - (pxls[(x+1),y][0])),2)) + (pow(abs((pxls[(x-1),y][1]) - (pxls[(x+1),y][1])),2)) + (pow(abs((pxls[(x-1),y][2]) - (pxls[(x+1),y][2])),2))) + ((pow(abs((pxls[x,(y+1)][0]) - (pxls[x,(y-1)][0])),2)) + (pow(abs((pxls[x,(y+1)][1]) - (pxls[x,(y-1)][1])),2)) + (pow(abs((pxls[x,(y+1)][2]) - (pxls[x,(y-1)][2])),2)))
 	return e
 
 def getImage(filename):
