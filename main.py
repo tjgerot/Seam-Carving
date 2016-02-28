@@ -17,9 +17,15 @@ def getPixels(img):
 	return pxls
 
 def saveEnergy(width,height,pxls):
-	for x in range(width - 1):
-		for y in range(height - 1):
-			print("Energy of pixel (" + str(x) + ", " + str(y) + "): " + str(energy(pxls,x,y)))
+	whole = []
+	row = []
+	for x in range(width):
+		for y in range(height):
+			row.append(energy(pxls,x,y))
+			if(y == (height - 1)):
+				whole.append(row)
+				row = []
+	return whole
 
 def main():
 	print("Starting Program...")
