@@ -5,7 +5,7 @@ def energy(pxls,x,y):
 	try:
 		e = ((pow(abs((pxls[(x-1),y][0]) - (pxls[(x+1),y][0])),2)) + (pow(abs((pxls[(x-1),y][1]) - (pxls[(x+1),y][1])),2)) + (pow(abs((pxls[(x-1),y][2]) - (pxls[(x+1),y][2])),2))) + ((pow(abs((pxls[x,(y+1)][0]) - (pxls[x,(y-1)][0])),2)) + (pow(abs((pxls[x,(y+1)][1]) - (pxls[x,(y-1)][1])),2)) + (pow(abs((pxls[x,(y+1)][2]) - (pxls[x,(y-1)][2])),2)))
 	except Exception:
-		print("Border Pixel!")
+		pass
 	return e
 
 def getImage(filename):
@@ -20,9 +20,10 @@ def main():
 	print("Starting Program...")
 	img = getImage("images/lake.jpg")
 	pxls = getPixels(img)
-	x = int(input("X Value: "))
-	y = int(input("Y Value: "))
-	print(energy(pxls,x,y))
+	width, height = img.size
+	for x in range(width - 1):
+		for y in range(height - 1):
+			print("Energy of pixel (" + str(x) + ", " + str(y) + "): " + str(energy(pxls,x,y)))
 
 if __name__ == "__main__":
   main()
