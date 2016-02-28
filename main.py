@@ -32,7 +32,7 @@ def main():
 	img = getImage("images/lake.jpg")
 	pxls = getPixels(img)
 	width, height = img.size
-	saveEnergy(width,height,pxls)
+	print(saveEnergy(width,height,pxls))
 
 if __name__ == "__main__":
   main()
