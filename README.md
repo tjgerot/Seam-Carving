@@ -1,2 +1,2 @@
-# Seam-Cutting
-A Python seam cutting project
+# Seam-Carving
+A Python seam carving project
